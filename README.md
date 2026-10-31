@@ -1,4 +1,3 @@
-
 # Sentiment Analysis Web API - Lab 2
 
 ## Student Information
@@ -25,7 +24,7 @@ KHTN-Lab2-FASTAPI
 ├── main.py              # Main FastAPI application source code
 ├── test_api.py          # Python test script using requests
 ├── requirements.txt     # List of project dependencies
-└── README.md            # Documentation and submission details
+├── README.md            # Documentation and submission details
 └── .gitignore           # Git ignore file configuration
 ```
 
@@ -47,12 +46,14 @@ cd khtn-lab2-fastapi
 ### 3. Create and Activate Virtual Environment
 
 * **Windows:**
+
 ```bash
 python -m venv venv
 .\venv\Scripts\activate
 ```
 
 * **macOS / Linux:**
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -68,7 +69,7 @@ pip install -r requirements.txt
 
 ## Running the API Server
 
-You can start the server directly using Python or via Uvicorn:
+Start the API server in your first terminal window using Python or Uvicorn:
 
 ```bash
 python main.py
@@ -80,9 +81,35 @@ python main.py
 uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Once started, the API will be available at: `http://127.0.0.1:8000`
+Once started, the API server will run actively at: `http://127.0.0.1:8000`
 
-Interactive Swagger API documentation can be accessed at: `http://127.0.0.1:8000/docs`
+---
+
+## Testing the API (via Terminal)
+
+To test the API endpoints using the automated Python script, open a **new (second) terminal window** while keeping the server running in the first terminal.
+
+### Step 1: Open a Second Terminal & Activate Virtual Environment
+
+* **Windows:**
+
+```bash
+.\venv\Scripts\activate
+```
+
+* **macOS / Linux:**
+
+```bash
+source venv/bin/activate
+```
+
+### Step 2: Execute the Test Script
+
+Run the following command to test all endpoints (`/`, `/health`, `/predict`, and error handling):
+
+```bash
+python test_api.py
+```
 
 ---
 
@@ -94,6 +121,7 @@ Returns a general introduction and available endpoints.
 
 * **Request:** `GET http://127.0.0.1:8000/`
 * **Response Example:**
+
 ```json
 {
   "message": "Welcome to the Sentiment Analysis Web API!",
@@ -113,6 +141,7 @@ Checks system operational status and model readiness.
 
 * **Request:** `GET http://127.0.0.1:8000/health`
 * **Response Example (200 OK):**
+
 ```json
 {
   "status": "healthy",
@@ -126,6 +155,7 @@ Accepts text payload, runs inference, and returns sentiment classification label
 
 * **Request Header:** `Content-Type: application/json`
 * **Request Body:**
+
 ```json
 {
   "text": "I absolutely love working with FastAPI and Hugging Face!"
@@ -133,6 +163,7 @@ Accepts text payload, runs inference, and returns sentiment classification label
 ```
 
 * **Response Example (200 OK):**
+
 ```json
 {
   "label": "POSITIVE",
@@ -141,6 +172,7 @@ Accepts text payload, runs inference, and returns sentiment classification label
 ```
 
 * **Error Response Example (400 Bad Request):**
+
 ```json
 {
   "detail": "Invalid input: Text cannot consist solely of whitespace."
@@ -149,20 +181,6 @@ Accepts text payload, runs inference, and returns sentiment classification label
 
 ---
 
-## Automated Testing
-
-Ensure the server is running, then execute the automated test script in another terminal window:
-
-```bash
-python test_api.py
-```
-
----
-
 ## Demonstration Video
 
 * **Video Link:** [https://drive.google.com/drive/folders/1jwVGHgaZJ5E9jQbgjp31tBYhyn5axaQE?usp=sharing]
-
-
-
-
