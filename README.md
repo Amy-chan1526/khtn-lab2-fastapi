@@ -161,8 +161,8 @@ python test_api.py
 
 ## Demonstration Video
 
-* **Video Link:** [INSERT_YOUR_YOUTUBE_OR_GOOGLE_DRIVE_LINK_HERE]
+* **Video Link:** [https://drive.google.com/drive/folders/1jwVGHgaZJ5E9jQbgjp31tBYhyn5axaQE?usp=sharing]
 
-*(Note: Please ensure the video link is publicly accessible)*
+
 
 
