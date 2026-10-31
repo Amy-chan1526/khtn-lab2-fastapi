@@ -25,7 +25,7 @@ KHTN-Lab2-FASTAPI
 ├── main.py              # Main FastAPI application source code
 ├── test_api.py          # Python test script using requests
 ├── requirements.txt     # List of project dependencies
-├── README.md            # Documentation and submission details
+└── README.md            # Documentation and submission details
 └── .gitignore           # Git ignore file configuration
 ```
 
